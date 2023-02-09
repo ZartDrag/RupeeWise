@@ -86,7 +86,7 @@ export default function Login() {
                   type="submit"
                   className="btn btn--login"
                   onClick={() =>
-                    navigate("/login/dashboard", { replace: true })
+                    navigate("/dashboard", { replace: true })
                   }
                 >
                   Log in
