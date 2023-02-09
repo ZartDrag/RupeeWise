@@ -1,36 +1,53 @@
 import React from 'react'
+import { BrowserRouter } from 'react-router-dom';
+import {HashLink as Link} from 'react-router-hash-link';
+import Landing from './Landing';
+import { Routes,Route,useNavigate ,Router} from 'react-router-dom';
+import Login from './Login';
 
-export default function Header() {
+
+export default function Navbar() {
+  
+  const navigate=useNavigate();
   return (
+
+   
     <div>
-      <div id="navbar" class="navbar">
-      <div class="navbar__container">
-        <div class="navbar__box">
-          <div class="navbar__box-left">
-            <div class="logo">
-              <p class="logo--text">₹uppeWise</p>
+      <div id="navbar" className="navbar">
+      <div className="navbar__container">
+        <div className="navbar__box">
+          <div className="navbar__box-left">
+            <div className="logo">
+              <p className="logo--text">₹uppeWise</p>
             </div>
-            <ul class="navbar__ul">
-              <li class="navbar__ul--li">
-                <a href="#header">Home</a>
+            <ul className="navbar__ul">
+              <li className="navbar__ul--li">
+                <Link to="#header">Home</Link>
               </li>
-              <li class="navbar__ul--li">
-                <a href="#about">About Us</a>
+              <li className="navbar__ul--li">
+                <Link to="#about" smooth>About Us</Link>
               </li>
-              <li class="navbar__ul--li">
-                <a href="#features">Features</a>
+              <li className="navbar__ul--li">
+                <Link to="#features">Features</Link>
               </li>
-              <li class="navbar__ul--li">
-                <a href="#contact">Contact Us</a>
+              <li className="navbar__ul--li">
+                <Link to="#contact">Contact Us</Link>
               </li>
             </ul>
           </div>
-          <div class="navbar__box--right">
-            <button class="btn btn--signin">Sign In</button>
+          <div className="navbar__box--right">
+            <button className="btn btn--signin" onClick={()=>navigate('/login',{replace:true})} >
+              Sign In
+              </button>
           </div>
         </div>
       </div>
     </div>
+   
     </div>
+    
+    
+    
+       
   )
-}
+  }

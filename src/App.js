@@ -1,21 +1,24 @@
 
-import  './Mycomponentcss/Main.css';
-import Navbar from './Mycomponent/Navbar';
-import Header from './Mycomponent/Header';
-import AboutUs from './Mycomponent/AboutUs';
-import Features from './Mycomponent/Features';
-import Contact from './Mycomponent/Contact';
-import Footer from './Mycomponent/Footer';
+import  './Mycomponentcss/style.css';
+
+import Landing from './Mycomponent/Landing';
+import { Routes,Route } from 'react-router-dom';
+
+import Login from './Mycomponent/Login';
+import Dashboard from './Mycomponent/Dashboard';
 function App() {
   return (
     <>
-    <Navbar/>
-    <Header/>
-    <AboutUs/>
-    <Features/>
-    <Contact/>
-    <Footer/>
-
+    
+    <Routes>
+        <Route exact path='/' element={<Landing/>}/>
+        <Route exact path='/login' element={<Login/>}/>
+        <Route exact path='/login/dashboard' element={<Dashboard/>}/>
+    </Routes>
+    
+   
+   
+ 
     </>
   );
 }
