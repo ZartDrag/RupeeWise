@@ -30,8 +30,8 @@ export default function Login() {
     <div>
       <div className="loginPage">
         <div className="loginPage__leftside">
-          <div className="loginPage--logo">
-            <a href="index.html">₹upeeWise</a>
+          <div className="loginPage--logo" onClick={() =>navigate("/", { replace: true })}>
+          <a> ₹upeeWise</a> 
           </div>
           <div className="loginPage--headingbox">
             <h1 className="loginPage--hero">
@@ -86,7 +86,7 @@ export default function Login() {
                   type="submit"
                   className="btn btn--login"
                   onClick={() =>
-                    navigate("/login/dashboard", { replace: true })
+                    navigate("/dashboard", { replace: true })
                   }
                 >
                   Log in

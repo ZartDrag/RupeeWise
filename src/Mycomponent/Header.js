@@ -1,8 +1,9 @@
 import React from 'react'
 import header12 from './image/header_Img.png';
-
+import { useNavigate } from 'react-router-dom';
 
 export default function Header1() {
+  const navigate=useNavigate();
   return (
     <div>
       <div id="header" class="header">
@@ -18,7 +19,7 @@ export default function Header1() {
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                 </p>
-                <button class="btn btn--createacc">Create an Account</button>
+                <button class="btn btn--createacc" onClick={()=>navigate('/login',{replace:true})} >Create an Account</button>
               </div>
             </div>
             <div class="col-1-of-2">
