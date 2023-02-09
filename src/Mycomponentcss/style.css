@@ -419,6 +419,7 @@
   margin: 0 auto;
   gap: 1.8rem;
   grid-template-columns: 20rem auto 40rem;
+  overflow: hidden;
 }
 
 aside {
@@ -456,6 +457,7 @@ aside .close {
 .menu {
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
   height: 80vh;
   position: relative;
   top: 5rem;
@@ -638,6 +640,84 @@ main .insights .wallet span:nth-child(1) {
   font-size: 2rem;
   margin-bottom: 2rem;
 }
+/*=============================*/
+
+/*======= user form =========*/
+
+/* .form-container{
+  background: #fefefe;
+  box-shadow: 0 2px 6px 0 rgba(67, 89, 113, 0.12);
+  border-radius: 20px;
+  padding: 3rem;  
+} */
+
+.user-form form{
+  margin-bottom: 2rem;
+}
+
+.user-form h1{
+  font-size: 3rem;
+  margin-top: 1.5rem;
+  letter-spacing: 0.1rem;
+  text-align: center;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.input--set{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.form-container{
+  width: 58%;
+  margin: 0 auto;
+}
+
+.type--wrapper{
+  margin-right: 2rem;
+}
+
+.user-form--title,
+.user-form--type,
+.user-form--amount,
+.user-form--category,
+.user-form--description{
+  width: 100%;
+  display: inline-block;
+  padding: 1.5rem;
+  border: none;
+  background-color: rgba(254, 202, 87, 0.5);
+  border-radius: 10px;
+  outline: none;
+  margin: 1rem 0;
+}
+
+.user-form--description{
+  resize: none;
+}
+
+.amountInput--box{
+  position: relative;
+}
+
+.user-form--amount{
+  padding-left: 2.8rem;
+}
+
+.i-rupee{
+  position: absolute;
+  top: 2.8rem;
+  left: 1rem;
+  font-size: 1.8rem;
+  color: #636e72;
+}
+
 
 /*======= Right side =========*/
 .right .top {
@@ -1122,6 +1202,23 @@ li {
   cursor: pointer;
   font-weight: 500;
 }
+
+.btn--addnew{
+  display:flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #feca57;
+  color: #fffff7;
+}
+
+.i-add{
+  padding-right: 1rem;
+}
+
+.btn--addnew:hover{
+  background-color: #ffb142;
+}
+
 .btn--signin {
   padding: 1rem 3.5rem;
   background-color: #feca57;

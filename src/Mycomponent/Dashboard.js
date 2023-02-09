@@ -146,14 +146,15 @@ export default function Dashboard() {
   // });
   return (
     <>
-      
       <div>
         <div class="container">
-          
           <aside>
             {/* <!-- top --> */}
             <div class="top">
-              <div class="logo" onClick={() =>navigate("/", { replace: true })}>
+              <div
+                class="logo"
+                onClick={() => navigate("/", { replace: true })}
+              >
                 <span class="material-symbols-outlined i-rupee-logo">
                   currency_rupee
                 </span>
@@ -244,12 +245,17 @@ export default function Dashboard() {
                     </a>
                   </li>
                 </ul>
+
+                <button class="btn btn--addnew">
+                  <span class="material-symbols-rounded i-add">add</span>
+                  <span>Add New</span>
+                </button>
               </nav>
             </div>
           </aside>
           {/* <!-- End of Aside --> */}
 
-          <main>
+          <main class="hide">
             <h1>Dashboard</h1>
             {/* <!-- welcome --> */}
             <div class="welcome-card">
@@ -344,20 +350,96 @@ export default function Dashboard() {
                 <div class="text-muted">Total</div>
               </div>
             </div>
-            {/* 
-        <!-- Chart --> */}
+            {/* <!-- Chart --> */}
             <div class="chart">
               <div class="chart-container">
                 <h2>Expenses</h2>
-                
+
                 <canvas ref={expenseChart}></canvas>
               </div>
             </div>
           </main>
           {/* <!-- End of Main --> */}
 
+          {/* Form */}
+          <div class="user-form">
+            <h1>Form</h1>
+            <form>
+              <div class="form-container">
+                <div className="title--wrapper">
+                  <div className="label--wrapper">
+                    <label for="title">Title</label>
+                  </div>
+                  <div className="titleInput--box">
+                    <input
+                      type="text"
+                      name="title"
+                      className="user-form--title"
+                    />
+                  </div>
+                </div>
+                <div className="input--set">
+                  <div className="type--wrapper">
+                    <div className="label--wrapper">
+                      <label for="type">Type</label>
+                    </div>
+                    <div className="typeInput--box">
+                      <input
+                        type="text"
+                        name="type"
+                        className="user-form--type"
+                      />
+                    </div>
+                  </div>
+                  <div className="amount--wrapper">
+                    <div className="label--wrapper">
+                      <label for="amount">Amount</label>
+                    </div>
+                    <div className="amountInput--box">
+                      <span class="material-symbols-outlined i-rupee">
+                        currency_rupee
+                      </span>
+                      <input
+                        type="number"
+                        name="amount"
+                        className="user-form--amount"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="category--wrapper">
+                  <div className="label--wrapper">
+                    <label for="category">Category</label>
+                  </div>
+                  <div className="categoryInput--box">
+                    <input
+                      type="text"
+                      name="category"
+                      className="user-form--category"
+                    />
+                  </div>
+                </div>
+                <div className="description--wrapper">
+                  <div className="label--wrapper">
+                    <label for="description">Description</label>
+                  </div>
+                  <div className="descriptionInput--box">
+                    <textarea
+                      type="text"
+                      name="description"
+                      rows="10"
+                      cols="30"
+                      className="user-form--description"
+                    ></textarea>
+                  </div>
+                </div>
+                <button class="btn btn--submit">Submit</button>
+              </div>
+            </form>
+          </div>
+
           {/* <!-- Right --> */}
-          <div class="right">
+          <div class="right ">
             <div class="top">
               <button class="menu-btn">
                 <span class="material-symbols-rounded"> menu </span>
