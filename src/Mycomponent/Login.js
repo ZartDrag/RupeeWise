@@ -5,9 +5,9 @@ var loginFormContainer;
 var signupFormContainer;
 
 function toggleActive(cls1, cls2) {
-  if (cls1 != null && cls1.current.classList.contains("hide")) {
-    cls1.current.classList.remove("hide");
-    cls2.current.classList.add("hide");
+  if (cls1 != null && cls1.current.classNameList.contains("hide")) {
+    cls1.current.classNameList.remove("hide");
+    cls2.current.classNameList.add("hide");
   } else {
     console.log("not working");
   }
