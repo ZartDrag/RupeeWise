@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import { Line } from "react-chartjs-2";
+// import ScriptTag from 'react-script-tag';
+
 
 export default function NewDash() {
   return (

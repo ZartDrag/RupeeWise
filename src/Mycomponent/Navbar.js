@@ -18,7 +18,7 @@ export default function Navbar() {
         <div className="navbar__box">
           <div className="navbar__box-left">
             <div className="logo">
-              <p className="logo--text">₹uppeWise</p>
+              <p className="logo--text">₹upeeWise</p>
             </div>
             <ul className="navbar__ul">
               <li className="navbar__ul--li">

@@ -1,98 +1,160 @@
-import React, { useRefs } from "react";
+
+import { React, useRef } from "react";
+import { useNavigate } from "react-router-dom";
+import welcome from './image/welcome.png'
+import userprofile from './image/userprofile.png';
 import { Helmet } from "react-helmet";
 
-import { Chart } from "chart.js";
+// import { Chart } from "chart.js";
+// console.log(expenseChart);
+// var ctx1=expenseChart.getContext("2d");
+// var gradientBg1 = ctx1.createLinearGradient(0, 0, 0, 525);
+// // var ctx1 = useRefs(null);
+// // Chart.defaults.font.size = 12;
+// // Chart.defaults.font.family = "'Poppins', sans-serif";
 
-Chart.defaults.font.size = 12;
-Chart.defaults.font.family = "'Poppins', sans-serif";
+// const gradient = window["chartjs-plugin-gradient"];
 
-const gradient = window["chartjs-plugin-gradient"];
+//  var yValues = [2000, 4000, 900, 12000, 7500, 5020, 9000];
+//  var xValues = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
 
-var yValues = [2000, 4000, 900, 12000, 7500, 5020, 9000];
-var xValues = ["Jan", "Feb", "Mar", "Apr", "May", "Jun", "Jul"];
+//  var valX = [1, 2, 3, 4, 5];
+//  var valY = [2, 3, 1, 5, 1];
+//   gradientBg1.addColorStop(0, "rgba(116,185,255,0.6)");
+//   gradientBg1.addColorStop(1, "rgba(116,185,255,0)");
+//   var expenseChart = new Chart(ctx1, {
+//       type: "line",
+//       data: {
+//         labels: xValues,
+//         datasets: [
+//           {
+//             label: "2022",
+//             backgroundColor: gradientBg1,
+//             borderColor: "rgba(116,185,255,0.4)",
+//             data: yValues,
+//             tension: 0.3,
+//             pointHoverBackgroundColor: "rgba(9,132,227,1.0)",
+//             fill: true,
+//             pointRadius: 6,
+//             pointHoverRadius: 10,
+//           },
+//         ],
+//       },
+//       options: {
+//         plugins: {
+//           legend: {
+//             labels: {
+//               // This more specific font property overrides the global property
+//               font: {
+//                 family: "'Poppins', sans-serif",
+//                 size: 14,
+//               },
+//             },
+//           },
+//         },
+//         scales: {
+//           x: {
+//             grid: {
+//               display: false,
+//             },
+//             ticks: {
+//               color: "#2d3436",
+//             },
+//           },
+    
+//           y: {
+//             border: {
+//               display: false,
+//             },
+//             ticks: {
+//               callback: function (value, index, ticks) {
+//                 return "₹" + value;
+//               },
+//             },
+//           },
+//         },
+//       },
+//     });
 
-var valX = [1, 2, 3, 4, 5];
-var valY = [2, 3, 1, 5, 1];
-//expense-chart
-// var ctx1;
-// var gradientBg1;
+// // expensechart
+// // var ctx1;
+// // var gradientBg1;
 
-// var expenseChart;
+// // var expenseChart;
 
 export default function Dashboard() {
-  // ctx1 = document.getElementById("expense-chart").getContext("2d");
-  var ctx1 = useRefs(null);
-  var gradientBg1 = ctx1.createLinearGradient(0, 0, 0, 525);
-
-  gradientBg1.addColorStop(0, "rgba(116,185,255,0.6)");
-  gradientBg1.addColorStop(1, "rgba(116,185,255,0)");
-
-  var expenseChart = new Chart(ctx1, {
-    type: "line",
-    data: {
-      labels: xValues,
-      datasets: [
-        {
-          label: "2022",
-          backgroundColor: gradientBg1,
-          borderColor: "rgba(116,185,255,0.4)",
-          data: yValues,
-          tension: 0.3,
-          pointHoverBackgroundColor: "rgba(9,132,227,1.0)",
-          fill: true,
-          pointRadius: 6,
-          pointHoverRadius: 10,
-        },
-      ],
-    },
-    options: {
-      plugins: {
-        legend: {
-          labels: {
-            // This more specific font property overrides the global property
-            font: {
-              family: "'Poppins', sans-serif",
-              size: 14,
-            },
-          },
-        },
-      },
-      scales: {
-        x: {
-          grid: {
-            display: false,
-          },
-          ticks: {
-            color: "#2d3436",
-          },
-        },
+ const  expenseChart = useRef(null);
+ const navigate = useNavigate();
   
-        y: {
-          border: {
-            display: false,
-          },
-          ticks: {
-            callback: function (value, index, ticks) {
-              return "₹" + value;
-            },
-          },
-        },
-      },
-    },
-  });
+
+  // ctx1 = document.getElementById("expense-chart").getContext("2d");
+  // var ctx1 = useRefs(null);
+  // 
+
+  
+  // var expenseChart = new Chart(ctx1, {
+  //   type: "line",
+  //   data: {
+  //     labels: xValues,
+  //     datasets: [
+  //       {
+  //         label: "2022",
+  //         backgroundColor: gradientBg1,
+  //         borderColor: "rgba(116,185,255,0.4)",
+  //         data: yValues,
+  //         tension: 0.3,
+  //         pointHoverBackgroundColor: "rgba(9,132,227,1.0)",
+  //         fill: true,
+  //         pointRadius: 6,
+  //         pointHoverRadius: 10,
+  //       },
+  //     ],
+  //   },
+  //   options: {
+  //     plugins: {
+  //       legend: {
+  //         labels: {
+  //           // This more specific font property overrides the global property
+  //           font: {
+  //             family: "'Poppins', sans-serif",
+  //             size: 14,
+  //           },
+  //         },
+  //       },
+  //     },
+  //     scales: {
+  //       x: {
+  //         grid: {
+  //           display: false,
+  //         },
+  //         ticks: {
+  //           color: "#2d3436",
+  //         },
+  //       },
+  
+  //       y: {
+  //         border: {
+  //           display: false,
+  //         },
+  //         ticks: {
+  //           callback: function (value, index, ticks) {
+  //             return "₹" + value;
+  //           },
+  //         },
+  //       },
+  //     },
+  //   },
+  // });
   return (
     <>
-      <Helmet>
-        <script src="./chart.js"></script>
-        <script src="node_modules/chart.js/dist/chart.umd.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-gradient"></script>
-      </Helmet>
+      
       <div>
         <div class="container">
+          
           <aside>
             {/* <!-- top --> */}
             <div class="top">
-              <div class="logo">
+              <div class="logo" onClick={() =>navigate("/", { replace: true })}>
                 <span class="material-symbols-outlined i-rupee-logo">
                   currency_rupee
                 </span>
@@ -200,7 +262,7 @@ export default function Dashboard() {
                   <h3>Have a Nice Day</h3>
                 </div>
                 <div class="welcome-img">
-                  <img src="Assets/Images/welcome.png" alt="" />
+                  <img src={welcome} alt="" />
                 </div>
               </div>
             </div>
@@ -288,7 +350,8 @@ export default function Dashboard() {
             <div class="chart">
               <div class="chart-container">
                 <h2>Expenses</h2>
-                <canvas ref={ctx1}></canvas>
+                
+                <canvas ref={expenseChart}></canvas>
               </div>
             </div>
           </main>
@@ -312,7 +375,7 @@ export default function Dashboard() {
                   <small class="text-muted">view profile</small>
                 </div>
                 <div class="profile-photo">
-                  <img src="Assets/Images/user-profile.png" alt="" />
+                  <img src={userprofile} alt="" />
                 </div>
               </div>
             </div>

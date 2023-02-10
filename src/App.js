@@ -14,7 +14,7 @@ function App() {
     <Routes>
         <Route exact path='/' element={<Landing/>}/>
         <Route exact path='/login' element={<Login/>}/>
-        <Route exact path='/dashboard' element={<NewDash/>}/>
+        <Route exact path='/dashboard' element={<Dashboard/>}/>
     </Routes>
     
    
