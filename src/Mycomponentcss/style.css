@@ -10,10 +10,10 @@
 .row:not(:last-child) {
   margin-bottom: 8rem;
 }
-.row [class^=col-] {
+.row [className^=col-] {
   float: left;
 }
-.row [class^=col-]:not(:last-child) {
+.row [className^=col-]:not(:last-child) {
   margin-right: 6rem;
 }
 .row--container {
