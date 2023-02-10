@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useEffect, useRef } from "react";
 import { useNavigate } from "react-router-dom";
-import jQuery from "jquery";
 
 var loginFormContainer;
 var signupFormContainer;
@@ -23,92 +22,16 @@ function activeSignUp() {
 }
 
 export default function Login() {
-  const [credentials, setCredentials] = useState({
-    username: "",
-    email: "",
-    password: "",
-  });
-
-  // let history = useNavigate();
-
   // console.log(loginFormContainer);
   loginFormContainer = useRef(null);
   signupFormContainer = useRef(null);
   const navigate = useNavigate();
-
-  const handleLogin = async (e) => {
-    e.preventDefault();
-    console.log("bod");
-    var head = { Accept: "*/*", "Content-Type": "application/json;" };
-    const response = await fetch("http://localhost:5000/authenticate/login", {
-      method: "POST",
-      mode: "no-cors",
-      headers: head,
-      body: JSON.stringify({
-        username: credentials.username,
-        password: credentials.password,
-      }),
-    });
-
-    const json = await response.json();
-    console.log(json);
-
-    // jQuery.ajax({
-    //   url: "http://localhost:5000/authenticate/login",
-    //   data: JSON.stringify({
-    //     username: credentials.username,
-    //     password: credentials.password,
-    //   }),
-    //   headers : {
-    //     'Access-Control-Allow-Origin' : "*",
-    //     "Access-Control-Request-Header" : 'x-Requested-With'
-    //   },
-    //   crossDomain : true,
-    //   // cors : false,
-    //   type: "POST",
-    //   async: true,
-    //   contentType: "application/json",
-    //   success: function (resp) {
-    //     console.log(resp);
-    //   },
-    // });
-
-    // () => navigate("/dashboard", { replace: true })
-  };
-
-  const handleSignup = async (e) => {
-    e.preventDefault();
-    var head = { Accept: "*/*", "Content-Type": "application/json;" };    
-    console.log(head);
-    const response = await fetch("http://localhost:5000/authenticate/register", {
-      method: "POST",
-      mode: "no-cors",
-      headers: head,
-      body: JSON.stringify({
-        username: credentials.username,
-        email: credentials.email,
-        password: credentials.password,
-      }),
-    });
-
-    const json = await response.json();
-    console.log(json);
-
-  };
-
-  const onChange = (e) => {
-    setCredentials({ ...credentials, [e.target.name]: e.target.value });
-  };
-
   return (
     <div>
       <div className="loginPage">
         <div className="loginPage__leftside">
-          <div
-            className="loginPage--logo"
-            onClick={() => navigate("/", { replace: true })}
-          >
-            <a> ₹upeeWise</a>
+          <div className="loginPage--logo" onClick={() =>navigate("/", { replace: true })}>
+          <a> ₹upeeWise</a> 
           </div>
           <div className="loginPage--headingbox">
             <h1 className="loginPage--hero">
@@ -129,16 +52,10 @@ export default function Login() {
             <h2 className="login--text">Log in</h2>
             <div className="input--area">
               <div className="username--wrapper input--field">
-                <label htmlFor="username">Username</label>
+                <label for="username">Username</label>
                 <br />
                 <div className="loginInput--box">
-                  <input
-                    type="text"
-                    name="username"
-                    className="login--uname"
-                    value={credentials.username}
-                    onChange={onChange}
-                  />
+                  <input type="text" name="username" className="login--uname" />
                   <span className="material-symbols-rounded i-check hide">
                     check
                   </span>
@@ -148,14 +65,12 @@ export default function Login() {
                 </div>
               </div>
               <div className="password--wrapper input--field">
-                <label htmlFor="password">Password</label>
+                <label for="password">Password</label>
                 <br />
                 <div className="loginInput--box">
                   <input
                     type="password"
                     name="password"
-                    value={credentials.password}
-                    onChange={onChange}
                     className="login--pass"
                   />
                   <span className="material-symbols-rounded i-check hide">
@@ -166,12 +81,13 @@ export default function Login() {
                   </span>
                 </div>
               </div>
-
               <div className="submit--wrapper">
                 <button
                   type="submit"
                   className="btn btn--login"
-                  onClick={handleLogin}
+                  onClick={() =>
+                    navigate("/dashboard", { replace: true })
+                  }
                 >
                   Log in
                 </button>
@@ -193,7 +109,7 @@ export default function Login() {
             <div className="input--area">
               <div className="username--wrapper input--field">
                 <div className="label--wrapper">
-                  <label htmlFor="username">Username</label>
+                  <label for="username">Username</label>
                   <span className="alert--text hide">Already Exist</span>
                 </div>
                 <div className="signupInput--box">
@@ -212,7 +128,7 @@ export default function Login() {
               </div>
               <div className="email--wrapper input--field">
                 <div className="label--wrapper">
-                  <label htmlFor="email">Email</label>
+                  <label for="email">Email</label>
                   <span className="alert--text hide">Already Exist</span>
                 </div>
                 <div className="signupInput--box">
@@ -226,7 +142,7 @@ export default function Login() {
                 </div>
               </div>
               <div className="password--wrapper input--field">
-                <label htmlFor="password">Password</label>
+                <label for="password">Password</label>
                 <br />
                 <div className="signupInput--box">
                   <input
@@ -243,11 +159,7 @@ export default function Login() {
                 </div>
               </div>
               <div className="submit--wrapper">
-                <button
-                  type="submit"
-                  className="btn btn--signup"
-                  onClick={handleSignup}
-                >
+                <button type="submit" className="btn btn--signup">
                   Sign up
                 </button>
               </div>
