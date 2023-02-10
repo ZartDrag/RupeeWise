@@ -6,7 +6,6 @@ import { Routes,Route } from 'react-router-dom';
 
 import Login from './Mycomponent/Login';
 import Dashboard from './Mycomponent/Dashboard';
-import NewDash from './Mycomponent/NewDash';
 function App() {
   return (
     <>
