@@ -4,6 +4,11 @@
 var loginFormContainer = document.querySelector("#loginform--container");
 var signupFormContainer = document.querySelector("#signupform--container");
 
+var sidebarDashboardMenu = document.querySelector(".sidebar-dashboard");
+
+var dashboardMain = document.querySelector(".main");
+var dashboardUserForm = document.querySelector(".user-form");
+
 // functions
 
 /*
@@ -28,4 +33,15 @@ function activeSignUp() {
 
 function windowOpener(windowPage) {
   window.open(windowPage);
+}
+
+/*
+function to toggle 
+*/
+function activeUserForm() {
+  toggleActive(dashboardUserForm, dashboardMain);
+}
+
+function activeDashboard() {
+  toggleActive(dashboardMain, dashboardUserForm);
 }

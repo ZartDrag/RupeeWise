@@ -10,6 +10,11 @@ import { CategoryScale,LinearScale } from "chart.js";
 Chart.register(CategoryScale,LinearScale,...registerables);
 var expenseChart;
 var yearlychart;
+
+var dashboard = true;
+var dashboardFormContainer;
+var expenseFormContainer;
+
 export default function Dashboard() {
   
   
@@ -142,6 +147,40 @@ var ctx1=ctx.getContext('2d');
  
   },[])
 
+  //for expense form
+  var sidebarDashboardMenu = document.querySelector(".sidebar-dashboard");
+
+  // var dashboardMain = document.querySelector(".main");
+  // var dashboardUserForm = document.querySelector(".user-form");
+
+  function toggleActive(cls1, cls2) {
+    if (cls1 != null && cls1.current.classList.contains("hide")) {
+      cls1.current.classList.remove("hide");
+      cls2.current.classList.add("hide");
+    } else {
+      console.log("not working");
+    }
+  }
+
+  /*
+  function to toggle 
+  */
+  // function activeUserForm() {
+  //   toggleActive(expenseFormContainer, dashboardFormContainer);
+  // }
+
+  function activeDashboard() {
+    if(dashboard){
+      toggleActive(dashboardFormContainer, expenseFormContainer);
+      dashboard = false;
+    } else {  
+      toggleActive(expenseFormContainer, dashboardFormContainer);
+      dashboard = true;
+    }
+  }
+
+  expenseFormContainer = useRef(null);
+  dashboardFormContainer = useRef(null);
   
   return (
     <>
@@ -243,7 +282,7 @@ var ctx1=ctx.getContext('2d');
                   </li>
                 </ul>
 
-                <button class="btn btn--addnew">
+                <button class="btn btn--addnew" onClick={activeDashboard}>
                   <span class="material-symbols-rounded i-add">add</span>
                   <span>Add New</span>
                 </button>
@@ -252,7 +291,7 @@ var ctx1=ctx.getContext('2d');
           </aside>
           {/* <!-- End of Aside --> */}
 
-          <main class="">
+          <main class="" ref = {dashboardFormContainer}>
             <h1>Dashboard</h1>
             {/* <!-- welcome --> */}
             <div className="welcome-card">
@@ -359,7 +398,7 @@ var ctx1=ctx.getContext('2d');
           {/* <!-- End of Main --> */}
 
           {/* Form */}
-          <div class="user-form hide">
+          <div class="user-form hide" ref = {expenseFormContainer}>
             <h1>Form</h1>
             <form>
               <div class="form-container">
