@@ -15,10 +15,10 @@ export default function Header1() {
                 <h1 className="hero--text">
                   Organise You<span className="hero--text-symbol">₹</span> Money
                 </h1>
-                <p className="hero--para">
+                {/* <p className="hero--para">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                   do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                </p>
+                </p> */}
                 <button className="btn btn--createacc" onClick={()=>navigate('/login',{replace:true})} >Create an Account</button>
               </div>
             </div>

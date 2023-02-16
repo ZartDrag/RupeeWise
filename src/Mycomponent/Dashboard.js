@@ -10,6 +10,11 @@ import { CategoryScale,LinearScale } from "chart.js";
 Chart.register(CategoryScale,LinearScale,...registerables);
 var expenseChart;
 var yearlychart;
+
+var dashboard = true;
+var dashboardFormContainer;
+var expenseFormContainer;
+
 export default function Dashboard() {
   
   
@@ -142,10 +147,43 @@ var ctx1=ctx.getContext('2d');
  
   },[])
 
+  //for expense form
+  var sidebarDashboardMenu = document.querySelector(".sidebar-dashboard");
+
+  // var dashboardMain = document.querySelector(".main");
+  // var dashboardUserForm = document.querySelector(".user-form");
+
+  function toggleActive(cls1, cls2) {
+    if (cls1 != null && cls1.current.classList.contains("hide")) {
+      cls1.current.classList.remove("hide");
+      cls2.current.classList.add("hide");
+    } else {
+      console.log("not working");
+    }
+  }
+
+  /*
+  function to toggle 
+  */
+  // function activeUserForm() {
+  //   toggleActive(expenseFormContainer, dashboardFormContainer);
+  // }
+
+  function activeDashboard() {
+    if(dashboard){
+      toggleActive(dashboardFormContainer, expenseFormContainer);
+      dashboard = false;
+    } else {  
+      toggleActive(expenseFormContainer, dashboardFormContainer);
+      dashboard = true;
+    }
+  }
+
+  expenseFormContainer = useRef(null);
+  dashboardFormContainer = useRef(null);
   
   return (
     <>
-      
       <div>
         <div className="container">
           
@@ -243,12 +281,17 @@ var ctx1=ctx.getContext('2d');
                     </a>
                   </li>
                 </ul>
+
+                <button class="btn btn--addnew" onClick={activeDashboard}>
+                  <span class="material-symbols-rounded i-add">add</span>
+                  <span>Add New</span>
+                </button>
               </nav>
             </div>
           </aside>
           {/* <!-- End of Aside --> */}
 
-          <main>
+          <main class="" ref = {dashboardFormContainer}>
             <h1>Dashboard</h1>
             {/* <!-- welcome --> */}
             <div className="welcome-card">
@@ -353,6 +396,83 @@ var ctx1=ctx.getContext('2d');
             </div>
           </main>
           {/* <!-- End of Main --> */}
+
+          {/* Form */}
+          <div class="user-form hide" ref = {expenseFormContainer}>
+            <h1>Form</h1>
+            <form>
+              <div class="form-container">
+                <div className="title--wrapper">
+                  <div className="label--wrapper">
+                    <label for="title">Title</label>
+                  </div>
+                  <div className="titleInput--box">
+                    <input
+                      type="text"
+                      name="title"
+                      className="user-form--title"
+                    />
+                  </div>
+                </div>
+                <div className="input--set">
+                  <div className="type--wrapper">
+                    <div className="label--wrapper">
+                      <label for="type">Type</label>
+                    </div>
+                    <div className="typeInput--box">
+                      <input
+                        type="text"
+                        name="type"
+                        className="user-form--type"
+                      />
+                    </div>
+                  </div>
+                  <div className="amount--wrapper">
+                    <div className="label--wrapper">
+                      <label for="amount">Amount</label>
+                    </div>
+                    <div className="amountInput--box">
+                      <span class="material-symbols-outlined i-rupee">
+                        currency_rupee
+                      </span>
+                      <input
+                        type="number"
+                        name="amount"
+                        className="user-form--amount"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div className="category--wrapper">
+                  <div className="label--wrapper">
+                    <label for="category">Category</label>
+                  </div>
+                  <div className="categoryInput--box">
+                    <input
+                      type="text"
+                      name="category"
+                      className="user-form--category"
+                    />
+                  </div>
+                </div>
+                <div className="description--wrapper">
+                  <div className="label--wrapper">
+                    <label for="description">Description</label>
+                  </div>
+                  <div className="descriptionInput--box">
+                    <textarea
+                      type="text"
+                      name="description"
+                      rows="10"
+                      cols="30"
+                      className="user-form--description"
+                    ></textarea>
+                  </div>
+                </div>
+                <button class="btn btn--submit">Submit</button>
+              </div>
+            </form>
+          </div>
 
           {/* <!-- Right --> */}
           <div className="right">

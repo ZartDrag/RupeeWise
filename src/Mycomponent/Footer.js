@@ -7,14 +7,14 @@ export default function Footer() {
       <div className="footer--container">
         <div className="footer--bar">
           <div className="footer--logo">
-            <p className="logo--text u-white"><span>₹</span>uppeWise</p>
+            <p className="logo--text u-white"><span>₹</span>upeeWise</p>
           </div>
         </div>
         <hr />
         <div className="copyright__bar">
           <div className="copyright__box">
             <div className="copyright__text--left">
-              <p>©2023 ₹uppeWise. All rights reserved</p>
+              <p>©2023 ₹upeeWise. All rights reserved</p>
             </div>
             <div className="copyright__text--right">
               <span className="material-symbols-outlined i-support">
