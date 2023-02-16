@@ -153,7 +153,6 @@ var ctx1=ctx.getContext('2d');
             <div className="top">
               <div className="logo" onClick={() =>navigate("/", { replace: true })}>
                 <span className="material-symbols-outlined i-rupee-logo">
-
                   currency_rupee
                 </span>
                 <h2>₹upeeWise</h2>
@@ -253,7 +252,7 @@ var ctx1=ctx.getContext('2d');
           </aside>
           {/* <!-- End of Aside --> */}
 
-          <main class="hide">
+          <main class="">
             <h1>Dashboard</h1>
             {/* <!-- welcome --> */}
             <div className="welcome-card">
@@ -360,7 +359,7 @@ var ctx1=ctx.getContext('2d');
           {/* <!-- End of Main --> */}
 
           {/* Form */}
-          <div class="user-form">
+          <div class="user-form hide">
             <h1>Form</h1>
             <form>
               <div class="form-container">

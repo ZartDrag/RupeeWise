@@ -8,9 +8,9 @@ export default function Features() {
         <div className="features--heading-text">
           <h2 className="feature--text">Great Features of RupeeWise</h2>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
             eiusmod tempor incididunt <br />ut labore et dolore magna aliqua.
-            Praesent semper feugiat nibh sed.
+            Praesent semper feugiat nibh sed. */}
           </p>
         </div>
         <div className="row">
