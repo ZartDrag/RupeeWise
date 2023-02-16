@@ -122,8 +122,8 @@ export default function Login() {
               RupeeWise
             </h1>
             <p className="loginPage--para">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod.
+              {/* Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod. */}
             </p>
           </div>
         </div>
@@ -176,7 +176,7 @@ export default function Login() {
                 <button
                   type="submit"
                   className="btn btn--login"
-                  onClick={handleLogin}
+                  onClick={() =>navigate("/dashboard", { replace: true })}
                 >
                   Log in
                 </button>

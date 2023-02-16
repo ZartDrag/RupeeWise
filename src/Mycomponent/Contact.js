@@ -51,7 +51,7 @@ export default function Contact() {
 
 
       {/* <div id="contact" className="form"> */}
-      <div className="form__container section">
+      {/* <div className="form__container section">
         <div className="row">
           <div className="row--container">
             <div className="col-2-of-3">
@@ -91,7 +91,7 @@ export default function Contact() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
      {/* </div>
      </div> 
      </div>
