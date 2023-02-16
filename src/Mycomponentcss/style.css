@@ -19,6 +19,7 @@
 .row--container {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 .row .col-1-of-2 {
   width: calc((100% - 6rem) / 2);
